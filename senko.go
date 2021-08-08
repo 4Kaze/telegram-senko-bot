@@ -20,7 +20,7 @@ const (
 	CHAT_TYPE_SUPERGROUP = "supergroup"
 	MAX_NAME_CHARACTERS  = 20
 	EMOJI_REGEX          = "[\U00010000-\U0010ffff]"
-	CHARACTER_REGEX      = "[@#$-/:-?{-~!\"^_`\\[\\]]"
+	SYMBOL_REGEX         = "[@#$-/:-?{-~!\"^_`\\[\\]]"
 	COMMAND              = "drawtext=fontfile=%s/%s:text='Welcome to the group\\! %s-kun\\!':bordercolor=black:borderw=1:fontcolor=white:fontsize=25:x=(w-text_w)/2:y=h-th-20:enable='gte(t,1.5)'"
 	INPUT_FILE           = "%s/greeting.mp4"
 	GCP_DIR              = "./serverless_function_source_code"
@@ -52,7 +52,7 @@ func init() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	symbolRegex, err = regexp.Compile(CHARACTER_REGEX)
+	symbolRegex, err = regexp.Compile(SYMBOL_REGEX)
 	if err != nil {
 		log.Fatalln(err)
 	}
