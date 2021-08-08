@@ -156,6 +156,10 @@ func TestStripName(t *testing.T) {
 			inputName:      strings.Repeat("😊", 20) + " Long name",
 			expectedOutput: "Long name",
 		},
+		{
+			inputName:      "':N?am^e$#@&*()",
+			expectedOutput: "Name",
+		},
 	}
 
 	for _, tc := range cases {

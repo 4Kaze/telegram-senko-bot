@@ -20,6 +20,7 @@ const (
 	CHAT_TYPE_SUPERGROUP = "supergroup"
 	MAX_NAME_CHARACTERS  = 20
 	EMOJI_REGEX          = "[\U00010000-\U0010ffff]"
+	CHARACTER_REGEX      = "[@#$-/:-?{-~!\"^_`\\[\\]]"
 	COMMAND              = "drawtext=fontfile=%s/%s:text='Welcome to the group\\! %s-kun\\!':bordercolor=black:borderw=1:fontcolor=white:fontsize=25:x=(w-text_w)/2:y=h-th-20:enable='gte(t,1.5)'"
 	INPUT_FILE           = "%s/greeting.mp4"
 	GCP_DIR              = "./serverless_function_source_code"
@@ -39,6 +40,7 @@ Use command /wepo to get a wink to my souwwce code on GitHuwb.`
 var (
 	once        sync.Once
 	emojiRegex  *regexp.Regexp
+	symbolRegex *regexp.Regexp
 	bot         *tgbotapi.BotAPI
 	resourceDir = GCP_DIR
 	fontFile    = "NotoSansCJKjp-Black.otf"
@@ -47,6 +49,10 @@ var (
 func init() {
 	var err error
 	emojiRegex, err = regexp.Compile(EMOJI_REGEX)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	symbolRegex, err = regexp.Compile(CHARACTER_REGEX)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -136,19 +142,20 @@ func handleGenerateCommand(update tgbotapi.Update) error {
 func generateAndSend(name string, chatId int64, replyToMessageId int) error {
 	file, err := ioutil.TempFile("", "*.mp4")
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	defer os.Remove(file.Name())
 	err = generateGif(stripName(name), file.Name())
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	return sendGif(chatId, file, replyToMessageId)
 }
 
 func stripName(name string) string {
 	nameWithNoEmojis := string(emojiRegex.ReplaceAll([]byte(name), []byte("")))
-	runes := []rune(nameWithNoEmojis)
+	nameWithNoSymbols := string(symbolRegex.ReplaceAll([]byte(nameWithNoEmojis), []byte("")))
+	runes := []rune(nameWithNoSymbols)
 	if len(runes) > MAX_NAME_CHARACTERS {
 		runes = runes[:MAX_NAME_CHARACTERS]
 	}

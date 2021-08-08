@@ -68,7 +68,7 @@ In private messages, it supports the following commands:
 * `/genewate [name]` - a command that generates a new gif with given name 
 * `/wepo` - a command that sends the link to this repo
 
-All names are stripped from emojis and truncated to maximum 20 characters.
+All names are stripped from emojis, symbols and are truncated to be at maximum 20 characters.
 
 ## Contributing
 
