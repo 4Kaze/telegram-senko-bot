@@ -77,7 +77,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-[![Chat on Telegram][telegram-shield]][telegram-bot-url]
+[![Chat on Telegram][telegram-shield]][telegram-profile-url]
 
 
 ## Acknowledgements
@@ -88,7 +88,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 [license-shield]: https://img.shields.io/github/license/4kaze/telegram-senko-bot
 [license-url]: https://github.com/4Kaze/telegram-senko-bot/blob/main/LICENSE
-[telegram-bot-url]: https://t.me/joinchat/DYKH-0G_8hsDDoN_iE8ZlA
+[telegram-bot-url]: https://t.me/lolimnotabot
 [telegram-bot-shield]: https://img.shields.io/badge/Demo-Senko-green?logo=telegram
 [telegram-shield]: https://img.shields.io/badge/-Contact%20me%20on%20Telegram-gray?logo=telegram
 [telegram-profile-url]: https://t.me/yonkaze
