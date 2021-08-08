@@ -3,6 +3,11 @@
 
 [![MIT License][license-shield]][license-url]
 [![Chat on Telegram][telegram-bot-shield]][telegram-bot-url]
+![build-shield]
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/47448124/128641986-732215c0-2d7e-4795-9817-20410a0dd212.gif" alt="UwU! An example!"/>
+</p>
 
 ## About The Bot
 
@@ -89,6 +94,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [license-shield]: https://img.shields.io/github/license/4kaze/telegram-senko-bot
 [license-url]: https://github.com/4Kaze/telegram-senko-bot/blob/main/LICENSE
 [telegram-bot-url]: https://t.me/lolimnotabot
+[build-shield]: https://img.shields.io/github/workflow/status/4Kaze/telegram-senko-bot/Go
 [telegram-bot-shield]: https://img.shields.io/badge/Demo-Senko-green?logo=telegram
 [telegram-shield]: https://img.shields.io/badge/-Contact%20me%20on%20Telegram-gray?logo=telegram
 [telegram-profile-url]: https://t.me/yonkaze
