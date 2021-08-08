@@ -21,7 +21,7 @@ In case you're wondering, Senko-san is an adorable 800-year old fox goddess from
 Follow these steps to set up your own version of this bot.
 
 ### Prerequisites
-
+For both development and runtime environments:
 * Go 1.13 (see [instructions](https://golang.org/doc/install))
 * FFmpeg
   ```sh
