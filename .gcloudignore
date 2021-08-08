@@ -1,4 +1,6 @@
 .idea
+.git
+.github
 .gitignore
 TestFont.otf
 README
