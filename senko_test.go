@@ -403,6 +403,7 @@ func setupTest(t *testing.T) {
 func init() {
 	_ = os.Setenv("TOKEN", TEST_TOKEN)
 	resourceDir = "."
+	fontFile = "TestFont.otf"
 	sentMessages = make([]Message, 0)
 }
 

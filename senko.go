@@ -20,11 +20,11 @@ const (
 	CHAT_TYPE_SUPERGROUP = "supergroup"
 	MAX_NAME_CHARACTERS  = 20
 	EMOJI_REGEX          = "[\U00010000-\U0010ffff]"
-	COMMAND              = "drawtext=fontfile=%s/NotoSansCJKjp-Black.otf:text='Welcome to the group\\! %s-kun\\!':bordercolor=black:borderw=1:fontcolor=white:fontsize=25:x=(w-text_w)/2:y=h-th-20:enable='gte(t,1.5)'"
-	INPUT_FILE           = "%s/input.mp4"
+	COMMAND              = "drawtext=fontfile=%s/%s:text='Welcome to the group\\! %s-kun\\!':bordercolor=black:borderw=1:fontcolor=white:fontsize=25:x=(w-text_w)/2:y=h-th-20:enable='gte(t,1.5)'"
+	INPUT_FILE           = "%s/greeting.mp4"
 	GCP_DIR              = "./serverless_function_source_code"
 
-	START_REPLY          = `Wewcome! OwO
+	START_REPLY = `Wewcome! OwO
 Senko-san onwy wowks on gwouwps. Juwst add me to uw gwouwp and i'ww gweat aww newcomews.
 If u want me to give u a gweeting gif with cuwstom name, uwse command /genewate [name]. That command onwy wowks hewe and not in gwouwps UwU
 Use command /wepo to get a wink to my souwwce code on GitHuwb.`
@@ -41,6 +41,7 @@ var (
 	emojiRegex  *regexp.Regexp
 	bot         *tgbotapi.BotAPI
 	resourceDir = GCP_DIR
+	fontFile    = "NotoSansCJKjp-Black.otf"
 )
 
 func init() {
@@ -174,7 +175,7 @@ func generateGif(username string, filename string) error {
 		"-i",
 		fmt.Sprintf(INPUT_FILE, resourceDir),
 		"-vf",
-		fmt.Sprintf(COMMAND, resourceDir, username),
+		fmt.Sprintf(COMMAND, resourceDir, fontFile, username),
 		"-codec:a",
 		"copy",
 		"-an",
