@@ -2,7 +2,7 @@
 
 
 [![MIT License][license-shield]][license-url]
-[![Chat on Telegram][telegram-bot-shield]][telegram-bot-url]
+[![Telegram Demo][telegram-bot-shield]][telegram-bot-url]
 ![build-shield]
 
 <p align="center">
