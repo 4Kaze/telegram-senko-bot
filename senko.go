@@ -25,16 +25,13 @@ const (
 	INPUT_FILE           = "%s/greeting.mp4"
 	GCP_DIR              = "./serverless_function_source_code"
 
-	START_REPLY = `Wewcome! OwO
-Senko-san onwy wowks on gwouwps. Juwst add me to uw gwouwp and i'ww gweat aww newcomews.
-If u want me to give u a gweeting gif with cuwstom name, uwse command /genewate [name]. That command onwy wowks hewe and not in gwouwps UwU
-Use command /wepo to get a wink to my souwwce code on GitHuwb.`
+	START_REPLY = soo dhawoow walaal waxaan ahay group caawiye u taagan in aan soo dhaweeyo saaxibada ku cusub groupkaaga . Samayso bot kan cml ah , /Repo
 	REPO_URL                   = "https://github.com/4Kaze/telegram-senko-bot"
 	GENERATE_USAGE             = "Usage: /genewate [name], whewe [name] is uw name OwO"
 	GENERATION_STARTED_MESSAGE = "Gotcha! OwO howd on, it wiww take a dozen seconds"
 	START_COMMAND              = "/start"
-	REPO_COMMAND               = "/wepo"
-	GENERATE_COMMAND           = "/genewate"
+	REPO_COMMAND               = "/Repo"
+	GENERATE_COMMAND           = "/generate"
 )
 
 var (
